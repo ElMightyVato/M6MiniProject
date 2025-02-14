@@ -20,7 +20,7 @@ ecommerce_app
 Setup
 Clone the Repository:
 First you will want to clone the repository by typing this into your vs.code
-**git clone https://github.com/ElMightyVato/ecommerce-app.git
+**git clone https://github.com/ElMightyVato/M6miniProject.git
 cd ecommerce-app**
 
 Create and Activate a Virtual Environment (windows):
