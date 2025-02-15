@@ -15,7 +15,7 @@ def place_order():
 
 @OrderView.route('/orders/<int:id>', methods = ['GET'])
 def get_order(id):
-    order = order.query.get(id)
+    order = Order.query.get(id)
     if not order:
         return jsonify({'message': 'Order not found'}), 404
     return jsonify({'order_id': order.id, 'customer_id': order.customer_id, 'total_price': order.total_price, 'date_placed': order.date_placed})

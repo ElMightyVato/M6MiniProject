@@ -12,12 +12,12 @@ class Customer(database.Model):
     id = database.Column(database.Integer, primary_key=True)  # Primary key for unique identification
     name = database.Column(database.String(25), nullable=False)
     email = database.Column(database.String(60), unique=True, nullable=False)
-    phone_number = database.Column(database.String(10))
+    phone_number = database.Column(database.String(10), nullable=True)
 
-    def __init__(self, name, email, phone=None):
+    def __init__(self, name, email, phone_number=None):
         self.name = name
         self.email = email
-        self.phone_number = phone
+        self.phone_number = phone_number
 
     def __repr__(self):
         return f'<Customer {self.name}>' # Remember youre better safe than sorry using

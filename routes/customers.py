@@ -6,7 +6,7 @@ CustomerAPI = Blueprint('CustomerAPI', __name__)
 @CustomerAPI.route('/customers', methods=['POST'])
 def add_customer():
     data = request.get_json()
-    new_customer = Customer(name=data['name'], email=data['email'], phone_number=data.get('phone'))
+    new_customer = Customer(name=data['name'], email=data['email'], phone_number=data.get('phone', None))
     database.session.add(new_customer)
     database.session.commit()
     return jsonify({'message': 'Customer added'}), 201
